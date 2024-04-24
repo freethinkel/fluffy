@@ -3,8 +3,15 @@ import { getCurrent } from "@tauri-apps/api/window";
 
 import { createEvent, createStore, sample } from "effector";
 
-const appWindow = getCurrent();
-
+const appWindow = (() => {
+  try {
+    return getCurrent();
+  } catch (_) {
+    return {
+      label: "main",
+    };
+  }
+})();
 type Options<T> = {
   invalidate?: (store: T) => boolean;
   restoreMap?: (store: T) => T;

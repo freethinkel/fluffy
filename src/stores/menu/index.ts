@@ -29,8 +29,8 @@ const openSettings = createEvent();
 const openSettingsFx = createEffect(async () => {
   const webviewWindow = new WebviewWindow("settings", {
     title: "Settings",
-    width: 500,
-    height: 440,
+    width: 550,
+    height: 500,
     focus: true,
     titleBarStyle: "overlay",
     hiddenTitle: true,

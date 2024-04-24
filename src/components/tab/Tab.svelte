@@ -1,9 +1,11 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
   import { Icon } from "../icon";
+  import { Spinner } from "../spinner";
 
   export let active = false;
   export let disabled = false;
+  export let title = "";
 
   const dispatch = createEventDispatcher();
 </script>
@@ -12,13 +14,19 @@
   class:active
   class="wrapper"
   type="button"
-  class:disabled={disabled}
+  class:disabled
   data-tauri-drag-region
   on:click={() => dispatch("click")}
 >
-  <span>
-    <slot />
-  </span>
+  {#if title}
+    <span>
+      {title}
+    </span>
+  {:else}
+    <div class="loader">
+      <Spinner size={18} />
+    </div>
+  {/if}
   <button
     class="close"
     type="button"
@@ -54,6 +62,11 @@
         background: var(--color-selection-10);
       }
     }
+  }
+  .loader {
+    display: flex;
+    flex: 1;
+    justify-content: center;
   }
   .wrapper span {
     flex: 1;

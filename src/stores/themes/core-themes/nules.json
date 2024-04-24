@@ -1,0 +1,33 @@
+{
+  "name": "Nules dark",
+  "primary": "#1B1B1B",
+  "selection": "#bbbbbb",
+  "type": "dark",
+  "terminal": {
+    "cursor": "#75FB9F",
+    "cursorAccent": "",
+    "selectionBackground": "#35583F",
+    "selectionForeground": "",
+    "selectionInactiveBackground": "#3e3e3e",
+    "background": "#1B1B1B",
+    "foreground": "#ffffff",
+    "black": "#353535",
+    "red": "#ff8080",
+    "green": "#A1FFC1",
+    "yellow": "#ffc799",
+    "blue": "#A9F0FD",
+    "magenta": "#d8a8ff",
+    "cyan": "#87f2ff",
+    "white": "#bbbbbb",
+    "orange": "#c6a679",
+    "brightBlack": "#353535",
+    "brightRed": "#ff8080",
+    "brightGreen": "#A1FFC1",
+    "brightYellow": "#ffc799",
+    "brightBlue": "#A9F0FD",
+    "brightMagenta": "#d8a8ff",
+    "brightCyan": "#87f2ff",
+    "brightWhite": "#bbbbbb",
+    "brightOrange": "#ceb188"
+  }
+}

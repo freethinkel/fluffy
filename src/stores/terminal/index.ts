@@ -94,7 +94,7 @@ export const createTerminal = (): Terminal => {
     fontWeightBold: "500",
     lineHeight: settingsStore.lineHeight$.getState(),
     allowProposedApi: true,
-    allowTransparency: true,
+    allowTransparency: false,
     customGlyphs: true,
     macOptionIsMeta: true,
     theme: {
@@ -114,9 +114,13 @@ export const createTerminal = (): Terminal => {
       fixFontRender(terminal, true);
     }, 10);
 
+    terminal.options.allowTransparency = theme.type === "dark";
     terminal.options.theme = {
       ...theme.terminal,
-      background: transparentize(1, theme.terminal.background!),
+      background: transparentize(
+        theme.type === "dark" ? 1 : 0,
+        theme.terminal.background!
+      ),
     };
   });
   settingsStore.lineHeight$.watch((value) => {

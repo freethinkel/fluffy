@@ -21,11 +21,12 @@
   <div class="tabs">
     {#each $tabs as tab}
       <Tab
+        title={tab.title}
         active={$currentTab.id === tab.id}
         disabled={$tabs.length <= 1}
         on:close={() => tabsStore.closeTab(tab)}
-        on:click={() => tabsStore.selectTab(tab)}>{tab.title}</Tab
-      >
+        on:click={() => tabsStore.selectTab(tab)}
+      />
     {/each}
   </div>
   <button class="add-tab" on:click={() => tabsStore.createNewTab()}>

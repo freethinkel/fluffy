@@ -37,6 +37,7 @@
   </div>
   <div
     class="info"
+    style:color={theme.terminal.foreground}
     style:border-color={transparentize(1 - 0.1, theme.selection)}
   >
     <div class="name">{theme.name}</div>

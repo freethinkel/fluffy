@@ -1,0 +1,41 @@
+{
+  "name": "fluffy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": ">=2.0.0-beta.0",
+    "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/addon-ligatures": "^0.9.0",
+    "@xterm/addon-unicode11": "^0.8.0",
+    "@xterm/addon-web-links": "^0.11.0",
+    "@xterm/addon-webgl": "file:/../xterm.js/addons/addon-webgl",
+    "@xterm/xterm": "file:../xterm.js",
+    "effector": "^23.2.0",
+    "nanoid": "^5.0.7",
+    "polished": "^4.3.1",
+    "postcss": "^8.4.38",
+    "svelte-splitpanes": "^0.8.0",
+    "tauri-plugin-pty": "file:./tauri-plugin-pty"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@tauri-apps/cli": ">=2.0.0-beta.0",
+    "@tsconfig/svelte": "^5.0.2",
+    "postcss-load-config": "^5.0.3",
+    "postcss-preset-env": "^9.5.8",
+    "svelte": "^4.2.8",
+    "svelte-check": "^3.4.6",
+    "tslib": "^2.6.0",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0"
+  }
+}

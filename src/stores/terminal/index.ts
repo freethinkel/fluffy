@@ -110,6 +110,10 @@ export const createTerminal = (): Terminal => {
   loadAddons(terminal);
 
   themesStore.currentTheme$.watch((theme) => {
+    setTimeout(() => {
+      fixFontRender(terminal, true);
+    }, 10);
+
     terminal.options.theme = {
       ...theme.terminal,
       background: transparentize(1, theme.terminal.background!),

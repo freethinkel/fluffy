@@ -1,6 +1,7 @@
 <script lang="ts">
   import { SettingsTab } from "@/components/settings-tab";
   import { SettingsGeneral } from "@/views/settings-general";
+  import { SettingsThemes } from "@/views/settings-themes";
 
   let current = "general";
 
@@ -35,13 +36,14 @@
     {#if current === "general"}
       <SettingsGeneral />
     {:else if current === "themes"}
-      Theme
+      <SettingsThemes />
     {/if}
   </div>
 </div>
 
 <style lang="postcss">
   .wrapper {
+    background: var(--color-primary-100);
     display: flex;
     flex-direction: column;
     height: 100%;

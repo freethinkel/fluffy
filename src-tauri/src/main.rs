@@ -4,11 +4,10 @@
 mod window;
 
 use cocoa::{
-    appkit::{NSColor, NSWindow},
-    base::{id, nil},
+    base::{id, nil, NO},
     foundation::{NSString, NSUserDefaults},
 };
-use tauri::{Manager, Window, WindowEvent};
+use tauri::Manager;
 use window::{apply_toolbar, ToolbarThickness};
 
 fn main() {
@@ -22,7 +21,7 @@ fn main() {
             let ud: id = unsafe { NSUserDefaults::standardUserDefaults() };
             unsafe {
                 ud.setBool_forKey_(
-                    false,
+                    NO,
                     NSString::alloc(nil).init_str("ApplePressAndHoldEnabled"),
                 )
             };

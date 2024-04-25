@@ -30,6 +30,14 @@
       "csp": null
     }
   },
+  "plugins": {
+    "updater": {
+      "active": true,
+      "endpoints": [],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDhGRDkwODFDQkVGREE5MDEKUldRQnFmMitIQWpaajZTMTg3MUxTemNuR0dKVkp3cFNpbWdnZ3RlNWJMQVNWYlZhanVwb1pVQWgK"
+    }
+  },
   "bundle": {
     "active": true,
     "category": "",

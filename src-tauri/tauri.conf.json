@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
-  "productName": "fluffy",
-  "version": "0.0.0",
+  "productName": "Fluffy",
+  "version": "1.0.0",
   "identifier": "dev.freethinkel.fluffy",
   "build": {
     "beforeDevCommand": "pnpm dev",
@@ -13,7 +13,7 @@
     "macOSPrivateApi": true,
     "windows": [
       {
-        "title": "fluffy",
+        "title": "Fluffy",
         "width": 800,
         "height": 600,
         "transparent": true,
@@ -32,7 +32,26 @@
   },
   "bundle": {
     "active": true,
+    "category": "",
     "targets": "all",
+    "macOS": {
+      "dmg": {
+        "appPosition": {
+          "x": 180,
+          "y": 170
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 170
+        },
+        "windowSize": {
+          "height": 400,
+          "width": 660
+        }
+      },
+      "files": {},
+      "minimumSystemVersion": "11"
+    },
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

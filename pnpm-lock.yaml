@@ -24,11 +24,11 @@ dependencies:
     specifier: ^0.11.0
     version: 0.11.0(@xterm/xterm@5.5.0)
   '@xterm/addon-webgl':
-    specifier: file:/../xterm.js/addons/addon-webgl
-    version: file:../xterm.js/addons/addon-webgl(@xterm/xterm@5.5.0)
+    specifier: file:./patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz
+    version: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz(@xterm/xterm@5.5.0)
   '@xterm/xterm':
-    specifier: file:../xterm.js
-    version: file:../xterm.js
+    specifier: file:./patched/xterm/xterm-xterm-v5.5.0.tgz
+    version: file:patched/xterm/xterm-xterm-v5.5.0.tgz
   effector:
     specifier: ^23.2.0
     version: 23.2.0
@@ -1082,7 +1082,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
     dev: false
 
   /@xterm/addon-ligatures@0.9.0(@xterm/xterm@5.5.0):
@@ -1091,7 +1091,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
       font-finder: 1.1.0
       font-ligatures: 1.4.1
     dev: false
@@ -1101,7 +1101,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
     dev: false
 
   /@xterm/addon-web-links@0.11.0(@xterm/xterm@5.5.0):
@@ -1109,7 +1109,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
     dev: false
 
   /acorn@8.11.3:
@@ -2327,19 +2327,21 @@ packages:
     hasBin: true
     dev: true
 
-  file:../xterm.js:
-    resolution: {directory: ../xterm.js, type: directory}
-    name: '@xterm/xterm'
-    dev: false
-
-  file:../xterm.js/addons/addon-webgl(@xterm/xterm@5.5.0):
-    resolution: {directory: ../xterm.js/addons/addon-webgl, type: directory}
-    id: file:../xterm.js/addons/addon-webgl
+  file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz(@xterm/xterm@5.5.0):
+    resolution: {integrity: sha512-DlQ6iDu7VYHh940ypWwK4eq4+CTOqpr/YTBzYGUqsY5Zb8iC+2C3BHFkw/9GgIVPQ9gk9i1Lcxm4aMLNtqQt4g==, tarball: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz}
+    id: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz
     name: '@xterm/addon-webgl'
+    version: 0.18.0
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
+    dev: false
+
+  file:patched/xterm/xterm-xterm-v5.5.0.tgz:
+    resolution: {integrity: sha512-nRPA+fz4vpN9/XTuOL90OiNGYeKNAp/syeoR/eUBnmzOezT22EBFLBV1yiOpzls7HIxwdCya3TOqwl/uMIx7KA==, tarball: file:patched/xterm/xterm-xterm-v5.5.0.tgz}
+    name: '@xterm/xterm'
+    version: 5.5.0
     dev: false
 
   file:tauri-plugin-pty:

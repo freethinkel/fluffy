@@ -11,6 +11,9 @@ dependencies:
   '@tauri-apps/plugin-shell':
     specifier: '>=2.0.0-beta.0'
     version: 2.0.0-beta.2
+  '@tauri-apps/plugin-updater':
+    specifier: 2.0.0-beta.1
+    version: 2.0.0-beta.1
   '@xterm/addon-fit':
     specifier: ^0.10.0
     version: 0.10.0(@xterm/xterm@5.5.0)
@@ -943,6 +946,11 @@ packages:
     engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dev: false
 
+  /@tauri-apps/api@2.0.0-beta.2:
+    resolution: {integrity: sha512-4r1r6kgttzIWxJ3HxkZQH+b7EiUtKhdUCPbi0KSalD+2T3j6klw+v8VyxhKwEdjM/eo60NE+J33v1E/Urq8puw==}
+    engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+    dev: false
+
   /@tauri-apps/api@2.0.0-beta.4:
     resolution: {integrity: sha512-Nxtj28NYUo5iwYkpYslxmOPkdI2WkELU2e3UH9nbJm9Ydki2CQwJVGQxx4EANtdZcMNsEsUzRqaDTvEUYH1l6w==}
     engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
@@ -1064,6 +1072,12 @@ packages:
     resolution: {integrity: sha512-9rWsfN7Wt+EuWmpmNnK8bCs+04fzhEYrHtWyLIAYxb9diFdcJrEoctCP9YM2v+Uf8/y8qFC7VCbZ/9VQHANymQ==}
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.4
+    dev: false
+
+  /@tauri-apps/plugin-updater@2.0.0-beta.1:
+    resolution: {integrity: sha512-Pfb0mtzG72EPH5xR4WZGVRXyFz521uDb0a451inSKnb0ELcRlfKukRzLZEfuCtxgUAUw8cVX6sn16OduE4AkDg==}
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.2
     dev: false
 
   /@tsconfig/svelte@5.0.4:

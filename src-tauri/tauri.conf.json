@@ -40,7 +40,7 @@
   },
   "bundle": {
     "active": true,
-    "category": "",
+    "category": "Utility",
     "targets": "all",
     "macOS": {
       "dmg": {

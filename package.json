@@ -24,7 +24,8 @@
     "polished": "^4.3.1",
     "postcss": "^8.4.38",
     "svelte-splitpanes": "^0.8.0",
-    "tauri-plugin-pty": "file:./tauri-plugin-pty"
+    "tauri-plugin-pty": "file:./tauri-plugin-pty",
+    "@tauri-apps/plugin-updater": "2.0.0-beta.1"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.1",

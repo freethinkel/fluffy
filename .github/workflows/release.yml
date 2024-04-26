@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - release
-      - feature/5-release-and-updates
 
 jobs:
   publish-tauri:

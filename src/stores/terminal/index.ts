@@ -3,7 +3,9 @@ import { FitAddon } from "@xterm/addon-fit";
 import { WebglAddon } from "@xterm/addon-webgl";
 import { Unicode11Addon } from "@xterm/addon-unicode11";
 import { WebLinksAddon } from "@xterm/addon-web-links";
+import { LigaturesAddon } from "@xterm/addon-ligatures";
 import { TauriPtyAddon } from "tauri-plugin-pty";
+import { CanvasAddon } from "@xterm/addon-canvas";
 import { currentTheme$ } from "../themes";
 import { themesStore } from "..";
 import { transparentize } from "polished";
@@ -16,6 +18,8 @@ const loadAddons = async (terminal: Terminal) => {
 
   const tauriPtyAddon = new TauriPtyAddon(ws);
   const webglAddon = new WebglAddon(false);
+  const canvasAddon = new CanvasAddon();
+  const ligaturesAddon = new LigaturesAddon();
   const unicodeAddon = new Unicode11Addon();
 
   // let linkHovered = false;
@@ -58,9 +62,8 @@ const loadAddons = async (terminal: Terminal) => {
   terminal.loadAddon(tauriPtyAddon);
   terminal.loadAddon(fitAddon);
   terminal.loadAddon(unicodeAddon);
-  terminal.loadAddon(webglAddon);
-  // terminal.loadAddon(canvasAddon);
-  // terminal.loadAddon(ligaturesAddon);
+  // terminal.loadAddon(webglAddon);
+  terminal.loadAddon(canvasAddon);
 
   await new Promise((resolve, reject) => {
     ws.addEventListener("open", () => resolve(null));
@@ -76,6 +79,9 @@ const loadAddons = async (terminal: Terminal) => {
       fitAddon.fit();
     }, 10);
   });
+  setTimeout(() => {
+    terminal.loadAddon(ligaturesAddon);
+  }, 100);
 
   ws.addEventListener("open", () => {
     fitAddon.fit();

@@ -1,14 +1,16 @@
 {
-  "name": "fluffy",
+  "name": "Fluffy",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "tauri:local": "TAURI_SIGNING_PRIVATE_KEY=$(cat ~/.tauri/fluffy.key) eval $(cat .env) tauri",
+    "create:update": "pnpm tauri:local build --target universal-apple-darwin"
   },
   "dependencies": {
     "@tauri-apps/api": ">=2.0.0-beta.0",
@@ -17,14 +19,16 @@
     "@xterm/addon-ligatures": "^0.9.0",
     "@xterm/addon-unicode11": "^0.8.0",
     "@xterm/addon-web-links": "^0.11.0",
-    "@xterm/addon-webgl": "file:/../xterm.js/addons/addon-webgl",
-    "@xterm/xterm": "file:../xterm.js",
+    "@xterm/addon-webgl": "file:./patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz",
+    "@xterm/addon-canvas": "file:./patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz",
+    "@xterm/xterm": "file:./patched/xterm/xterm-xterm-v5.5.0.tgz",
     "effector": "^23.2.0",
     "nanoid": "^5.0.7",
     "polished": "^4.3.1",
     "postcss": "^8.4.38",
     "svelte-splitpanes": "^0.8.0",
-    "tauri-plugin-pty": "file:./tauri-plugin-pty"
+    "tauri-plugin-pty": "file:./tauri-plugin-pty",
+    "@tauri-apps/plugin-updater": "2.0.0-beta.1"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.0.1",

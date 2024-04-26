@@ -40,9 +40,9 @@
         content: "";
         position: absolute;
         top: -1px;
-        left: 0;
-        width: 100%;
-        border-top: 1px solid var(--color-primary-80);
+        left: 6px;
+        right: 6px;
+        border-top: 1px solid var(--color-primary-50);
       }
     }
   }

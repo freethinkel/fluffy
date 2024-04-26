@@ -11,6 +11,12 @@ dependencies:
   '@tauri-apps/plugin-shell':
     specifier: '>=2.0.0-beta.0'
     version: 2.0.0-beta.2
+  '@tauri-apps/plugin-updater':
+    specifier: 2.0.0-beta.1
+    version: 2.0.0-beta.1
+  '@xterm/addon-canvas':
+    specifier: file:./patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz
+    version: file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz(@xterm/xterm@5.5.0)
   '@xterm/addon-fit':
     specifier: ^0.10.0
     version: 0.10.0(@xterm/xterm@5.5.0)
@@ -24,11 +30,11 @@ dependencies:
     specifier: ^0.11.0
     version: 0.11.0(@xterm/xterm@5.5.0)
   '@xterm/addon-webgl':
-    specifier: file:/../xterm.js/addons/addon-webgl
-    version: file:../xterm.js/addons/addon-webgl(@xterm/xterm@5.5.0)
+    specifier: file:./patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz
+    version: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz(@xterm/xterm@5.5.0)
   '@xterm/xterm':
-    specifier: file:../xterm.js
-    version: file:../xterm.js
+    specifier: file:./patched/xterm/xterm-xterm-v5.5.0.tgz
+    version: file:patched/xterm/xterm-xterm-v5.5.0.tgz
   effector:
     specifier: ^23.2.0
     version: 23.2.0
@@ -943,6 +949,11 @@ packages:
     engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dev: false
 
+  /@tauri-apps/api@2.0.0-beta.2:
+    resolution: {integrity: sha512-4r1r6kgttzIWxJ3HxkZQH+b7EiUtKhdUCPbi0KSalD+2T3j6klw+v8VyxhKwEdjM/eo60NE+J33v1E/Urq8puw==}
+    engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+    dev: false
+
   /@tauri-apps/api@2.0.0-beta.4:
     resolution: {integrity: sha512-Nxtj28NYUo5iwYkpYslxmOPkdI2WkELU2e3UH9nbJm9Ydki2CQwJVGQxx4EANtdZcMNsEsUzRqaDTvEUYH1l6w==}
     engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
@@ -1066,6 +1077,12 @@ packages:
       '@tauri-apps/api': 2.0.0-beta.4
     dev: false
 
+  /@tauri-apps/plugin-updater@2.0.0-beta.1:
+    resolution: {integrity: sha512-Pfb0mtzG72EPH5xR4WZGVRXyFz521uDb0a451inSKnb0ELcRlfKukRzLZEfuCtxgUAUw8cVX6sn16OduE4AkDg==}
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.2
+    dev: false
+
   /@tsconfig/svelte@5.0.4:
     resolution: {integrity: sha512-BV9NplVgLmSi4mwKzD8BD/NQ8erOY/nUE/GpgWe2ckx+wIQF5RyRirn/QsSSCPeulVpc3RA/iJt6DpfTIZps0Q==}
     dev: true
@@ -1082,7 +1099,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
     dev: false
 
   /@xterm/addon-ligatures@0.9.0(@xterm/xterm@5.5.0):
@@ -1091,7 +1108,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
       font-finder: 1.1.0
       font-ligatures: 1.4.1
     dev: false
@@ -1101,7 +1118,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
     dev: false
 
   /@xterm/addon-web-links@0.11.0(@xterm/xterm@5.5.0):
@@ -1109,7 +1126,7 @@ packages:
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
     dev: false
 
   /acorn@8.11.3:
@@ -2327,19 +2344,32 @@ packages:
     hasBin: true
     dev: true
 
-  file:../xterm.js:
-    resolution: {directory: ../xterm.js, type: directory}
-    name: '@xterm/xterm'
-    dev: false
-
-  file:../xterm.js/addons/addon-webgl(@xterm/xterm@5.5.0):
-    resolution: {directory: ../xterm.js/addons/addon-webgl, type: directory}
-    id: file:../xterm.js/addons/addon-webgl
-    name: '@xterm/addon-webgl'
+  file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz(@xterm/xterm@5.5.0):
+    resolution: {integrity: sha512-xzGPhODga++3FHoYC52GUIf7Zauy0pRVV3dUm5WQOX55VFLVteZRjSuPPSmItpuCcKBjUSLYuTONugpKB5Stkg==, tarball: file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz}
+    id: file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz
+    name: '@xterm/addon-canvas'
+    version: 0.7.0
     peerDependencies:
       '@xterm/xterm': ^5.0.0
     dependencies:
-      '@xterm/xterm': file:../xterm.js
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
+    dev: false
+
+  file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz(@xterm/xterm@5.5.0):
+    resolution: {integrity: sha512-ZEM8yYZ1boUSTBV/u+J7To26DqUkCHdXDXI49WmqruhS7ZoCWTpG+4DIXEy9zu8OMCEnqUamiuzHe/wOXVfVXg==, tarball: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz}
+    id: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz
+    name: '@xterm/addon-webgl'
+    version: 0.18.0
+    peerDependencies:
+      '@xterm/xterm': ^5.0.0
+    dependencies:
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
+    dev: false
+
+  file:patched/xterm/xterm-xterm-v5.5.0.tgz:
+    resolution: {integrity: sha512-gckls8IDbl7kYwvsjj8i8/1hmCsRy5LucUceM4spFGDdwyTe67zcB/sA/mNAUFdTc/7vq+y7A81217Oq+vm5Kw==, tarball: file:patched/xterm/xterm-xterm-v5.5.0.tgz}
+    name: '@xterm/xterm'
+    version: 5.5.0
     dev: false
 
   file:tauri-plugin-pty:

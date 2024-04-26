@@ -4,11 +4,10 @@
 mod window;
 
 use cocoa::{
-    appkit::{NSColor, NSWindow},
-    base::{id, nil},
+    base::{id, nil, NO},
     foundation::{NSString, NSUserDefaults},
 };
-use tauri::{Manager, Window, WindowEvent};
+use tauri::Manager;
 use window::{apply_toolbar, ToolbarThickness};
 
 fn main() {
@@ -17,12 +16,13 @@ fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_pty::init())
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_theme::init(ctx.config_mut()))
         .setup(|app| {
             let ud: id = unsafe { NSUserDefaults::standardUserDefaults() };
             unsafe {
                 ud.setBool_forKey_(
-                    false,
+                    NO,
                     NSString::alloc(nil).init_str("ApplePressAndHoldEnabled"),
                 )
             };

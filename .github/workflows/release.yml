@@ -16,6 +16,11 @@ jobs:
     runs-on: ${{ matrix.platform }}
 
     steps:
+      - uses: actions/checkout@v3
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -60,5 +65,3 @@ jobs:
           releaseBody: "nothing yet"
           releaseDraft: false
           prerelease: false
-      - name: Run tmate
-        uses: mxschmitt/action-tmate@v2

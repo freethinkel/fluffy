@@ -19,3 +19,13 @@ exec(
     "cp -R ./xterm-*.tgz ../../../fluffy/patched/xterm-addon-webgl",
   ].join(" && ")
 );
+exec(
+  [
+    "cd ../xterm.js/",
+    "yarn package",
+    "cd ./addons/addon-canvas",
+    "yarn package",
+    "yarn pack",
+    "cp -R ./xterm-*.tgz ../../../fluffy/patched/xterm-addon-canvas",
+  ].join(" && ")
+);

@@ -14,6 +14,9 @@ dependencies:
   '@tauri-apps/plugin-updater':
     specifier: 2.0.0-beta.1
     version: 2.0.0-beta.1
+  '@xterm/addon-canvas':
+    specifier: file:./patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz
+    version: file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz(@xterm/xterm@5.5.0)
   '@xterm/addon-fit':
     specifier: ^0.10.0
     version: 0.10.0(@xterm/xterm@5.5.0)
@@ -2341,8 +2344,19 @@ packages:
     hasBin: true
     dev: true
 
+  file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz(@xterm/xterm@5.5.0):
+    resolution: {integrity: sha512-PYVp8A/fUPd0xEaxxvLsILodVDHmXGNzenWqkFZwlAZ25I7R4Jo2mwh3mJbYu++I8Om56o2QcpxRYjl4HWcUGg==, tarball: file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz}
+    id: file:patched/xterm-addon-canvas/xterm-addon-canvas-v0.7.0.tgz
+    name: '@xterm/addon-canvas'
+    version: 0.7.0
+    peerDependencies:
+      '@xterm/xterm': ^5.0.0
+    dependencies:
+      '@xterm/xterm': file:patched/xterm/xterm-xterm-v5.5.0.tgz
+    dev: false
+
   file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz(@xterm/xterm@5.5.0):
-    resolution: {integrity: sha512-DlQ6iDu7VYHh940ypWwK4eq4+CTOqpr/YTBzYGUqsY5Zb8iC+2C3BHFkw/9GgIVPQ9gk9i1Lcxm4aMLNtqQt4g==, tarball: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz}
+    resolution: {integrity: sha512-oNYjB3jwvFPv0LADhSZewI/FoLL0c0Ee8OCwc16/I1rRj2l3p5oVpHiterNzAjFAu3jfA53PVT0CRmOLs3tU0A==, tarball: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz}
     id: file:patched/xterm-addon-webgl/xterm-addon-webgl-v0.18.0.tgz
     name: '@xterm/addon-webgl'
     version: 0.18.0
@@ -2353,7 +2367,7 @@ packages:
     dev: false
 
   file:patched/xterm/xterm-xterm-v5.5.0.tgz:
-    resolution: {integrity: sha512-nRPA+fz4vpN9/XTuOL90OiNGYeKNAp/syeoR/eUBnmzOezT22EBFLBV1yiOpzls7HIxwdCya3TOqwl/uMIx7KA==, tarball: file:patched/xterm/xterm-xterm-v5.5.0.tgz}
+    resolution: {integrity: sha512-r8ygGyYCmFvhifb68cY6cCmOoCfixbvlaat2nN+JPNN4dvEn2PE/0DNMZrEYDwEOk2HAj62y5gTjI/2byq5XFw==, tarball: file:patched/xterm/xterm-xterm-v5.5.0.tgz}
     name: '@xterm/xterm'
     version: 5.5.0
     dev: false

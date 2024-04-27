@@ -24,6 +24,10 @@
           "state": "active",
           "effects": ["hudWindow"]
         }
+      },
+      {
+        "label": "test",
+        "url": "http://localhost:3000"
       }
     ],
     "security": {

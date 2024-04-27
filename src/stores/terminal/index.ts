@@ -120,13 +120,9 @@ export const createTerminal = (): Terminal => {
       fixFontRender(terminal, true);
     }, 10);
 
-    terminal.options.allowTransparency = theme.type === "dark";
     terminal.options.theme = {
       ...theme.terminal,
-      background: transparentize(
-        theme.type === "dark" ? 1 : 0,
-        theme.terminal.background!
-      ),
+      background: transparentize(1, theme.terminal.background!),
     };
   });
   settingsStore.lineHeight$.watch((value) => {
